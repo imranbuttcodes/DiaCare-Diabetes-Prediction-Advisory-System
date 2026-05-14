@@ -24,7 +24,7 @@ Preprocessor::Preprocessor() : isFitted(false) {
 void Preprocessor::sortArray(double* arr, int n) {
     
     for(int i = 0; i < n - 1; i++) {
-        for (int j = i; j < n - i - 1; j++)
+        for (int j = 0; j < n - i - 1; j++)
         {
             if (arr[j + 1] < arr[j]) {
                 double temp = arr[j];
@@ -223,7 +223,7 @@ void Preprocessor::fit(RawRow* trainData, int n) {
         engineered[i] = engineerFeatures(temp);
     }
 
-    cout << "Temporary preprocessing complete";
+    cout << "Temporary preprocessing complete" << endl;
 
 
 
@@ -268,7 +268,7 @@ void Preprocessor::fit(RawRow* trainData, int n) {
     isFitted = true;
 
     cout << string(40, '-') << endl;
-    cout << "Preprocessor fitting complete";
+    cout << "Preprocessor fitting complete" << endl;
 }
 
 

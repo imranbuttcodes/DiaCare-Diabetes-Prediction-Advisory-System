@@ -4,6 +4,7 @@
 #include "include/csv_parser.h"
 #include "include/train_test_split.h"
 #include "include/preprocessor.h"
+#include "include/data_printer.h"
 
 using namespace std;
 
@@ -27,9 +28,13 @@ int main() {
         return 1;
     }
 
+    
+
     cout << "Dataset loaded successfully" << endl;
     cout << "Total rows: " << n << endl;
 
+
+    DataPrinter::headRaw(rawData, n, 5);
 
     RawRow trainData[MAX_ROWS];
     RawRow testData[MAX_ROWS];
@@ -85,27 +90,9 @@ int main() {
     prep.printScalerParams();
 
 
+    cout << endl;
+    cout << "Sample Processed Training Rows" << endl;;
 
-    cout << "\nSample Processed Training Rows\n";
-
-    for (int i = 0; i < 5; i++) {
-
-        cout << "\nRow " << i + 1 << endl;
-
-        for (int j = 0; j < NUM_FEATURES; j++) {
-
-            cout
-                << FEATURE_NAMES[j]
-                << ": "
-                << processedTrain[i].features[j]
-                << endl;
-        }
-
-        cout
-            << "Label: "
-            << processedTrain[i].label
-            << endl;
-    }
-
+    DataPrinter::headProcessed(processedTrain,trainSize, 5);
     return 0;
 }

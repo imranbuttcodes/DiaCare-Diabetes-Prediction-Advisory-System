@@ -310,14 +310,14 @@ void Preprocessor::transformBatch(RawRow* data, int n, ProcessedRow* output) {
 
 
 void Preprocessor::printImputeParams() {
-    cout << "\n Imputation Values " << "(non-zero medians) " << endl;
-    cout << "Feature           Value"  << endl;
+    cout << "\nImputation Values (non-zero medians) " << endl;
+    cout << "Feature                Value"  << endl;
     cout << string(30, '-') << endl;
-    cout << "Insulin" << impute_Insulin << endl;
-    cout << "SkinThickness"  << impute_SkinThickness << endl;
-    cout << "Glucose"  << impute_Glucose<< endl;
-    cout << "BMI"  << impute_BMI << endl;
-    cout << "BloodPressure"  << impute_BloodPressure << endl;
+    cout << "Insulin            " << impute_Insulin << endl;
+    cout << "SkinThickness      "  << impute_SkinThickness << endl;
+    cout << "Glucose            "  << impute_Glucose<< endl;
+    cout << "BMI                "  << impute_BMI << endl;
+    cout << "BloodPressure      "  << impute_BloodPressure << endl;
 }
 
 void Preprocessor::printCapParams() {
@@ -326,20 +326,20 @@ void Preprocessor::printCapParams() {
         "BloodPressure", "SkinThickness",
         "Insulin", "BMI", "Pedigree", "Age"
     };
-    cout << "\n Outlier Caps 5th - 95th percentile) "<< endl;
+    cout << "\nOutlier Caps (5th - 95th percentile) "<< endl;
     cout << "Feature      Lower       Upper" << endl;;
     cout << string(40, '-') << endl;
     for (int j = 0; j < TOTAL_RAW_FEATURES; j++) {
-        cout << names[j] << "   "  << cap_lower[j] << "   " <<  cap_upper[j] << endl;
+        cout << names[j] << "       "  << cap_lower[j] << "         " <<  cap_upper[j] << endl;
     }
 }
 
 void Preprocessor::printScalerParams() {
-    cout << "\n Scaler Params (7 final features) " << endl;
-    cout  << "Feature    Mean    Std\n";
+    cout << "\nScaler Params (7 final features) " << endl;
+    cout  << "Feature        Mean       Std\n";
     cout << string(44, '-') << "\n";
     for (int j = 0; j < NUM_FEATURES; j++) {
-        cout << FEATURE_NAMES[j] << "   " << scaler_mean[j] << "   " <<  scaler_std[j] << endl;
+        cout << FEATURE_NAMES[j] << "      " << scaler_mean[j] << "      " <<  scaler_std[j] << endl;
     }
 }
 

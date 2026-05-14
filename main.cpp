@@ -94,5 +94,6 @@ int main() {
     cout << "Sample Processed Training Rows" << endl;;
 
     DataPrinter::headProcessed(processedTrain,trainSize, 5);
+    system("pause");
     return 0;
 }

@@ -9,7 +9,7 @@ using namespace std;
 
 void TrainTestSplit::shuffleData(RawRow* data, int n) {
 
-    srand(time(0));
+    srand(42);
 
     // Fisher-Yates Shuffle
     for (int i = n - 1; i > 0; i--) {
@@ -24,13 +24,7 @@ void TrainTestSplit::shuffleData(RawRow* data, int n) {
 
 
 
-void TrainTestSplit::split(
-    RawRow* data,
-    int n,
-
-    RawRow* trainData,
-    int& trainSize,
-
+void TrainTestSplit::split( RawRow* data, int n, RawRow* trainData, int& trainSize,
     RawRow* testData,
     int& testSize,
 

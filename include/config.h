@@ -51,4 +51,7 @@ struct ProcessedRow {
 
 
 
-
+const int EPOCHS = 5000;
+const double LEARNING_RATE = 0.1;
+const double THRESHOLD = 0.46;
+const double LAMBDA = 0.04; // for l2 regularization

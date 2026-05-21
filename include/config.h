@@ -64,3 +64,51 @@ const double RISK_MODERATE = 0.60;
 const double RISK_HIGH = 0.80;
 
 const int WARD_MAX_CAPACITY = 10;
+
+
+
+const string REC_LOW = 
+   "Low diabetes risk.\n"
+    "   -> Maintain healthy weight and BMI.\n"
+    "   -> Limit sugar and refined carbs.\n"
+    "   -> Stay physically active daily.\n"
+    "   -> Annual checkup sufficient.";
+
+const string REC_MODERATE_LOW = 
+    "Mild risk factors detected.\n"
+    "   -> Reduce sugar and processed food intake.\n"
+    "   -> 30 minutes of walking daily recommended.\n"
+    "   -> Monitor your weight and BMI.\n"
+    "   -> Checkup every 6 months.";
+
+const string REC_MODERATE = 
+   "Notable diabetes risk detected.\n"
+    "   -> Consult a doctor within 2 weeks.\n"
+    "   -> Request a blood test.\n"
+    "   -> Begin home glucose monitoring.\n"
+    "   -> Switch to low glycemic index foods.";
+
+const string REC_HIGH = 
+   "High diabetes risk. Action needed.\n"
+    "   -> Visit doctor this week.\n"
+    "   -> Get fasting blood glucose and blood tests.\n"
+    "   -> Begin structured diabetes management plan.\n"
+    "   -> Monitor blood glucose daily.";
+
+const string REC_CRITICAL = 
+   "Critical diabetes risk. Urgent action required.\n"
+    "   -> See doctor TODAY.\n"
+    "   -> Immediate blood glucose test needed.\n"
+    "   -> Medication may be required. Do not delay.";
+
+
+
+    // DETERIORATION THRESHOLD
+const float RAPID_DETERIORATION = 0.10;
+
+// Action Type
+
+const int REGISTERED = 0;
+const int ADMITTED = 1;
+const int DISCHARGED = 2;
+const int CHECKUP_ADDED = 3;

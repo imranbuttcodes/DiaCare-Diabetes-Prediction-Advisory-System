@@ -1,7 +1,6 @@
 // src/patient.cpp
 #include "../include/patient.h"
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 
@@ -62,21 +61,21 @@ void Patient::addCheckup(double rawFeatures[TOTAL_RAW_FEATURES], double prob, st
 
 void Patient::displayHistory() {
     if (historyHead == nullptr) {
-        cout << "No checkup history found." << endl;
+        cout << "  No checkup history found.\n";
         return;
     }
 
-    cout << "\nCheckup History: " << name << endl;
-    cout << string(44, '-') << endl;
-    cout << "Visit        Date        RiskLevel       Probability" << endl;
-    cout << string(44, '-') << endl;
+    cout << "\n  Checkup History: " << name << "\n";
+    cout << "-----------------------------------------------------" << endl;
+    cout << "Visit  |  Date        |  Risk          |  Probability  " << endl;
+    cout << "-----------------------------------------------------" << endl;
 
     CheckupRecord* temp = historyHead;
     while (temp != nullptr) {
-        cout << temp->visitNumber  <<"      "<< temp->date <<"      " << temp->riskLevel <<"      " << temp->probability * 100 << "%" << endl;
+        cout << temp->visitNumber << "      "  << temp->date << "      "  << temp->riskLevel << "           "  << temp->probability * 100 << "%" << endl;
         temp = temp->next;
     }
-    cout << string(44, '-') << endl;
+    cout << "-----------------------------------------------------" << endl;
 }
 
 // RISK TRAJECTORY: Recursive SLL Analysis
@@ -151,31 +150,32 @@ Patient* Patient::deepCopy() {
 // DISPLAY SUMMARY:  One line per patient
 
 void Patient::displaySummary() {
-    cout << "  [" << id << "]  " << name << "  Age: " << age << "  P: "  << probability * 100 << "%" << "Risk: " << riskLevel << "Visits: " << visitCount << "\n";
+    cout << "[" << id << "]  " << "Name: " << name << "  Age: " << age << "  P: "   << probability * 100 << "%" << "  Risk: " << riskLevel << "  Visits: " << visitCount << endl;
 }
+
 
 // DISPLAY FULL: Complete patient details
 
 void Patient::displayFull() {
-    cout << "\n" << string(42, '=') << "\n";
-    cout << "Patient Details\n";
-    cout << string(42, '=') << "\n";
-    cout << "ID : " << id << "\n";
-    cout << "Name : " << name << "\n";
-    cout << "Age : " << age << "\n";
-    cout << "Risk Level : " << riskLevel << "\n";
-    cout << "P(Diabetes): " << probability * 100 << "%\n";
+    cout << "\n" << string(42, '=') << endl;
+    cout << "Patient Details" << endl;
+    cout << string(42, '=') << endl;
+    cout << "ID : " << id << endl;
+    cout << "Name : " << name << endl;
+    cout << "Age : " << age << endl;
+    cout << "Risk Level : " << riskLevel << endl;
+    cout << "P(Diabetes): " << probability * 100 << "%" << endl;
 
 
     if (isRapidDeterioration()) {
-        cout << "\n!! RAPID DETERIORATION DETECTED !!\n";
-        cout << "Risk is rising significantly across recent visits.\n";
-        cout << "Immediate medical attention strongly advised.\n";
+        cout << "\n!! RAPID DETERIORATION DETECTED !!" << endl;
+        cout << "Risk is rising significantly across recent visits." << endl;
+        cout << "Immediate medical attention strongly advised." << endl;
     }
 
-    cout << "\nRecommendation:\n";
-    cout << recommendation << "\n";
-    cout << string(42, '=') << "\n";
+    cout << "\nRecommendation:" << endl;
+    cout << recommendation << endl;
+    cout << string(42, '=') << endl;
 
     displayHistory();
 }

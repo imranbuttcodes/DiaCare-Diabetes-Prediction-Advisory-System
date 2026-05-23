@@ -42,9 +42,6 @@ void TrainTestSplit::split( RawRow* data, int n, RawRow* trainData, int& trainSi
 
     shuffleData(shuffled, n);
 
-
-
-
     testSize = (int)(n * testRatio);
 
     trainSize = n - testSize;

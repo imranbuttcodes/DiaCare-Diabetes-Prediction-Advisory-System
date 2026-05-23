@@ -79,24 +79,21 @@ int Queue::getSize() {
 
 void Queue::display() {
     if (isEmpty()) {
-        cout << "\nIntake queue is empty." << endl;
+        cout << "Intake Queue is empty." << endl;
         return;
     }
 
-    cout << "\n" << string(42, '=') << endl;
-    cout << "Patient Intake Queue  " << "(" << size << " waiting)" << endl;
-    cout << string(42, '=') << "\n";
-    cout << "Pos        ID      Name        Age" << endl;
-    cout << string(42, '-') << "\n";
+    cout << "\n========================================" << endl;
+    cout << "Patient Intake Queue (" << size << " waiting)" << endl;
+    cout << "========================================" << endl;
 
     QueueNode* temp = front;
-    int pos = 1;
+    int pos  = 1;
 
     while (temp != nullptr) {
-        cout << pos << "        " << temp->patient->id << "       " << temp->patient->name << "     "<< temp->patient->age << endl;
+        cout << "[" << pos << "] " << "ID: "   << temp->patient->id << "  Name: " << temp->patient->name << "  Age: "  << temp->patient->age << endl;
         temp = temp->next;
         pos++;
     }
-
-    cout << string(42, '=') << "\n";
+    cout << "========================================" << endl;
 }

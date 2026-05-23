@@ -63,8 +63,6 @@ const double RISK_MODERATE_LOW = 0.40;
 const double RISK_MODERATE = 0.60;
 const double RISK_HIGH = 0.80;
 
-const int WARD_MAX_CAPACITY = 10;
-
 
 
 const string REC_LOW = 
@@ -108,7 +106,7 @@ const float RAPID_DETERIORATION = 0.10;
 
 // Action Type
 
-const int REGISTERED = 0;
-const int ADMITTED = 1;
-const int DISCHARGED = 2;
-const int CHECKUP_ADDED = 3;
+const int ACTION_REGISTERED = 0;
+const int ACTION_ADMITTED = 1;
+const int ACTION_DISCHARGED = 2;
+const int ACTION_CHECKUP_ADDED = 3;

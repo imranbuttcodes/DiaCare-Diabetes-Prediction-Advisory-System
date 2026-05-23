@@ -53,7 +53,6 @@ private:
 
 public:
 
-
     int id;
     string name;
     int age;
@@ -82,9 +81,9 @@ public:
 
     // Risk Trajectory (recursive SLL)
     double getRiskTrajectory();
-    bool   isRapidDeterioration();
+    bool isRapidDeterioration();
 
-        Patient* deepCopy();
+    Patient* deepCopy();
 
     void displaySummary();
     void displayFull();

@@ -12,7 +12,7 @@ DoublyLinkedList::DoublyLinkedList(): head(nullptr), tail(nullptr),current(nullp
 
 DoublyLinkedList::~DoublyLinkedList() {
     // Delete all DLL nodes
-    // Do NOT delete Patient objects
+    // it Does NOT delete Patient objects
     // HospitalManager owns patients
     DLLNode* temp = head;
     while (temp != nullptr) {
@@ -200,7 +200,7 @@ void DoublyLinkedList::display() {
 
     cout << "\n============================================================" << endl;;
     cout << "Active Ward (" << size << " patients)";
-    cout << " HEAD = Highest Risk  |  TAIL = Lowest Risk" << endl;
+    cout << " Firsts = Highest Risk  |  last = Lowest Risk" << endl;
     cout << "============================================================" << endl;
 
     DLLNode* temp = head;

@@ -40,12 +40,12 @@ double Preprocessor::getPercentile(double* sortedArr, int n, double p) {
 
     double idx = (p / 100.0) * (n - 1);
     int lower  = (int)idx;
-    int hi  = lower + 1;
+    int upper  = lower + 1;
 
-    if (hi >= n) return sortedArr[n - 1];
+    if (upper >= n) return sortedArr[n - 1];
 
     double frac = idx - lower;
-    return sortedArr[lower] + frac * (sortedArr[hi] - sortedArr[lower]);
+    return sortedArr[lower] + frac * (sortedArr[upper] - sortedArr[lower]);
 }
 
 double Preprocessor::getNonZeroMedian(double* arr,int n) {
@@ -165,8 +165,8 @@ void Preprocessor::fit(RawRow* trainData, int n) {
     impute_BMI = getNonZeroMedian(bmi_arr, n);
     impute_BloodPressure = getNonZeroMedian(bp_arr, n);
 
-    cout << "Imputation medians learned" << endl;
 
+    
 
     double cols[TOTAL_RAW_FEATURES][MAX_ROWS];
 
@@ -204,8 +204,8 @@ void Preprocessor::fit(RawRow* trainData, int n) {
         cap_upper[j] = getPercentile(temp,n,higher_percentile);
     }
 
-    cout << "Outlier caps learned" << endl;
 
+    
 
 
     ProcessedRow engineered[MAX_ROWS];
@@ -238,7 +238,6 @@ void Preprocessor::fit(RawRow* trainData, int n) {
         scaler_mean[j] = sum / n;
     }
 
-    cout << "Scaler means learned" << endl;
 
 
     // learn scler variance
@@ -262,7 +261,6 @@ void Preprocessor::fit(RawRow* trainData, int n) {
         }
     }
 
-    cout << "Scaler stds learned" << endl;
 
 
     isFitted = true;

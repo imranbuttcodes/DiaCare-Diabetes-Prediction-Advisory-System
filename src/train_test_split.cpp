@@ -27,7 +27,6 @@ void TrainTestSplit::shuffleData(RawRow* data, int n) {
 void TrainTestSplit::split( RawRow* data, int n, RawRow* trainData, int& trainSize,
     RawRow* testData,
     int& testSize,
-
     double testRatio
 ) {
 

@@ -58,10 +58,8 @@ void Metrics::printMetrics() {
 }
 
 void Metrics::printAll(string label) {
-    cout << string(23,'-') << endl;
     cout << label << endl;
     printConfusionMatrix();
     printMetrics();
-    cout << string(23,'-') << endl;
 
 }

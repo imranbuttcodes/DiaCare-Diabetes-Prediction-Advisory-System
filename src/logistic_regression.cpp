@@ -80,7 +80,7 @@ void LogisticRegression::fit(ProcessedRow* data, int n) {
         }
 
         grad_of_Bais /= n;
-        
+        // l2 Reguralization 
         for (int j = 0; j < NUM_FEATURES; j++) {
             grad_of_weights[j] = (grad_of_weights[j] / n) - (LAMBDA * weights[j]);
         
@@ -121,15 +121,14 @@ int LogisticRegression::predict(double* features) {
 }
 
 void LogisticRegression::printWeights() {
-    cout  << string(36, '-') << endl;
     cout << "Learned Weights" << endl;
     cout << string(36, '-') << endl;
-    cout << "Feature        Weight"  << endl;
+    cout << "Feature             Weight"  << endl;
     cout << string(36, '-') << endl;
     for (int j = 0; j < NUM_FEATURES; j++) {
         cout << FEATURE_NAMES[j] << "       " << weights[j] << endl;
     }
 
-    cout << "Bias" << bias <<  endl;
+    cout << "Bias                   " << bias <<  endl;
     cout << string(36, '-') << endl<< endl;
 }
